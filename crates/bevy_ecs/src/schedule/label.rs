@@ -103,7 +103,7 @@ macro_rules! impl_label {
 
         impl $trait_name for &'static str {
             fn dyn_clone(&self) -> Box<dyn $trait_name> {
-                Box::new(<&str>::clone(self))
+                Box::new(*self)
             }
         }
     };

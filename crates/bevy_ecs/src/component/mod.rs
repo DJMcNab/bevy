@@ -202,6 +202,7 @@ pub struct Components {
 }
 
 #[derive(Debug, Error)]
+#[non_exhaustive]
 pub enum ComponentsError {
     #[error("A component of type {name:?} ({type_id:?}) already exists")]
     ComponentAlreadyExists { type_id: TypeId, name: String },
